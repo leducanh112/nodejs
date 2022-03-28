@@ -1,6 +1,11 @@
 const express = require('express')
-const router = ewpress.Router()
+const router = express.Router()
 
-const newsController = require ('../app/controlllers/NewsController.js')
+const newsController = require ('../app/controllers/NewsController.js')
+
+
+//newsController.index
+router.use('/:slug', newsController.show)
+router.use('/', newsController.index)
 
 module.exports = router
